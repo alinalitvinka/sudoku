@@ -57,6 +57,7 @@ module.exports = function solveSudoku(matrix) {
     }
     return false;
   }
+  let a = true;
   do {
     matrix = rotateMatrix(matrix);
     matrix = checkStr(matrix);
@@ -65,6 +66,6 @@ module.exports = function solveSudoku(matrix) {
     matrix = transformMatrix(matrix);
     matrix = checkStr(matrix);
     matrix = transformMatrix(matrix);
-  } while(find0(matrix) == true);
+  } while(a == false);
   return matrix;
 }
